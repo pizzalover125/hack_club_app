@@ -151,10 +151,8 @@ export default function Index() {
           Build epic projects. Have fun
         </Text>
       </View>
-
       <NavigationBar />
     </View>
-
-    // this is a test123123123123123
+    // git test
   );
 }
