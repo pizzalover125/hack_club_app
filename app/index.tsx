@@ -153,6 +153,5 @@ export default function Index() {
       </View>
       <NavigationBar />
     </View>
-    // git test
   );
 }

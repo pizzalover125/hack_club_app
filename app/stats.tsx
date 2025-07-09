@@ -5,21 +5,25 @@ import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, View } f
 export default function Index() {
   const [slackData, setSlackData] = useState<any>(null);
   const [hcbData, setHcbData] = useState<any>(null);
+  const [hackathonsCount, setHackathonsCount] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const [slackResponse, hcbResponse] = await Promise.all([
+        const [slackResponse, hcbResponse, hackathonsResponse] = await Promise.all([
           fetch("https://hackclub.com/api/slack/"),
           fetch("https://hcb.hackclub.com/stats"),
+          fetch("https://hackathons.hackclub.com/api/events/all"),
         ]);
 
         const slackResult = await slackResponse.json();
         const hcbResult = await hcbResponse.json();
+        const hackathonsResult = await hackathonsResponse.json();
 
         setSlackData(slackResult);
         setHcbData(hcbResult);
+        setHackathonsCount(Array.isArray(hackathonsResult) ? hackathonsResult.length : null);
       } catch (error) {
         console.error("Error fetching data:", error);
       } finally {
@@ -43,6 +47,8 @@ export default function Index() {
     { label: "Projects", value: hcbData?.events_count },
   ];
 
+  const hackathonsStat = { label: "Hackathons", value: hackathonsCount !== null ? hackathonsCount : "N/A" };
+
   if (loading) {
     return (
       <View style={styles.centerContainer}>
@@ -59,10 +65,10 @@ export default function Index() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
-        {[...slackStats, ...hcbStats].map((stat, index) => (
+        {[...slackStats, ...hcbStats, hackathonsStat].map((stat, index) => (
           <View key={index} style={styles.card}>
             <Text style={styles.label}>{stat.label}</Text>
-            <Text style={styles.value}>{stat.value?.toLocaleString() || "N/A"}</Text>
+            <Text style={styles.value}>{typeof stat.value === "number" ? stat.value.toLocaleString() : stat.value || "N/A"}</Text>
           </View>
         ))}
         <View style={styles.navbarSpacer} />

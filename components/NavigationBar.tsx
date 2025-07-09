@@ -1,5 +1,5 @@
 import { Link } from 'expo-router';
-import { BarChart, Computer, Hammer, Home, Timer } from 'lucide-react-native';
+import { BarChart, Calendar, Code, Hammer, Home, Timer } from 'lucide-react-native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -53,7 +53,22 @@ export default function NavigationBar() {
 
       <Link href="/hackathons" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Computer color="#FFFFFF" size={24} />
+        <Code color="#FFFFFF" size={24} />
+        <Text
+        style={styles.tabText}
+        numberOfLines={1}
+        ellipsizeMode="tail"
+        adjustsFontSizeToFit
+        minimumFontScale={0.7}
+        >
+        Hackathons
+        </Text>
+      </TouchableOpacity>
+      </Link>
+
+      <Link href="/events" asChild>
+      <TouchableOpacity style={styles.tab}>
+        <Calendar color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
