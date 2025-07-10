@@ -4,13 +4,14 @@
     "slug": "hack-club-app",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/hc-square.png",
     "scheme": "hackclubapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
+<<<<<<< HEAD
       "appleTeamId": "FBHQAXZYLW",
       "entitlements": {
         "com.apple.developer.security.application-groups": [
@@ -35,10 +36,13 @@
           "Zocial.ttf"
         ]
       }
+=======
+      "bundleIdentifier": "com.pizzalover125.hack-club-app"
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/hc-square.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -47,17 +51,17 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/hc-square.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/hc-h.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ec3750"
         }
       ],
       "@bacons/apple-targets"

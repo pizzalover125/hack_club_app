@@ -90,8 +90,11 @@ PODS:
     - ExpoModulesCore
   - ExpoWebBrowser (14.2.0):
     - ExpoModulesCore
+<<<<<<< HEAD
   - ExtensionStorage (1.0.0):
     - ExpoModulesCore
+=======
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
   - fast_float (6.1.4)
   - FBLazyVector (0.79.5)
   - fmt (11.0.2)
@@ -2084,7 +2087,11 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+<<<<<<< HEAD
   - RNSVG (15.11.2):
+=======
+  - RNSVG (15.12.0):
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2107,9 +2114,15 @@ PODS:
     - ReactCodegen
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
+<<<<<<< HEAD
     - RNSVG/common (= 15.11.2)
     - Yoga
   - RNSVG/common (15.11.2):
+=======
+    - RNSVG/common (= 15.12.0)
+    - Yoga
+  - RNSVG/common (15.12.0):
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
     - DoubleConversion
     - glog
     - hermes-engine
@@ -2168,7 +2181,10 @@ DEPENDENCIES:
   - ExpoSymbols (from `../node_modules/expo-symbols/ios`)
   - ExpoSystemUI (from `../node_modules/expo-system-ui/ios`)
   - ExpoWebBrowser (from `../node_modules/expo-web-browser/ios`)
+<<<<<<< HEAD
   - "ExtensionStorage (from `../node_modules/@bacons/apple-targets/ios`)"
+=======
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
   - fast_float (from `../node_modules/react-native/third-party-podspecs/fast_float.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - fmt (from `../node_modules/react-native/third-party-podspecs/fmt.podspec`)
@@ -2299,8 +2315,11 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-system-ui/ios"
   ExpoWebBrowser:
     :path: "../node_modules/expo-web-browser/ios"
+<<<<<<< HEAD
   ExtensionStorage:
     :path: "../node_modules/@bacons/apple-targets/ios"
+=======
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
   fast_float:
     :podspec: "../node_modules/react-native/third-party-podspecs/fast_float.podspec"
   FBLazyVector:
@@ -2474,7 +2493,10 @@ SPEC CHECKSUMS:
   ExpoSymbols: c5612a90fb9179cdaebcd19bea9d8c69e5d3b859
   ExpoSystemUI: c2724f9d5af6b1bb74e013efadf9c6a8fae547a2
   ExpoWebBrowser: dc39a88485f007e61a3dff05d6a75f22ab4a2e92
+<<<<<<< HEAD
   ExtensionStorage: 5796de20bf181317c376d693fedb64c6781a33ba
+=======
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: d2a9cd223302b6c9aa4aa34c1a775e9db609eb52
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
@@ -2551,7 +2573,11 @@ SPEC CHECKSUMS:
   RNGestureHandler: 7d0931a61d7ba0259f32db0ba7d0963c3ed15d2b
   RNReanimated: 2313402fe27fecb7237619e9c6fcee3177f08a65
   RNScreens: 482e9707f9826230810c92e765751af53826d509
+<<<<<<< HEAD
   RNSVG: 794f269526df9ddc1f79b3d1a202b619df0368e3
+=======
+  RNSVG: 8a1054afe490b5d63b9792d7ae3c1fde8c05cdd0
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
   SDWebImage: f29024626962457f3470184232766516dee8dfea
   SDWebImageAVIFCoder: 00310d246aab3232ce77f1d8f0076f8c4b021d90
   SDWebImageSVGCoder: 15a300a97ec1c8ac958f009c02220ac0402e936c
@@ -2559,6 +2585,10 @@ SPEC CHECKSUMS:
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: adb397651e1c00672c12e9495babca70777e411e
 
+<<<<<<< HEAD
 PODFILE CHECKSUM: 41389ee6866fe856fe00f1687de520b9c2533d0f
+=======
+PODFILE CHECKSUM: bc4fe3e4fa6e5e83441b5e64bf384ddc78b7165e
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
 
 COCOAPODS: 1.16.2

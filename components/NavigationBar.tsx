@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons';
+=======
+import { Ionicons } from '@expo/vector-icons';
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
 import { Link } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -8,7 +12,11 @@ export default function NavigationBar() {
     <View style={styles.container}>
       <Link href="/" asChild>
       <TouchableOpacity style={styles.tab}>
+<<<<<<< HEAD
         <Feather name="home" color="#FFFFFF" size={24} />
+=======
+        <Ionicons name="home" color="#FFFFFF" size={24} />
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -23,7 +31,11 @@ export default function NavigationBar() {
 
       <Link href="/ysws" asChild>
       <TouchableOpacity style={styles.tab}>
+<<<<<<< HEAD
         <MaterialIcons name="build" color="#FFFFFF" size={24} />
+=======
+        <Ionicons name="hammer" color="#FFFFFF" size={24} />
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -53,7 +65,11 @@ export default function NavigationBar() {
 
       <Link href="/hackathons" asChild>
       <TouchableOpacity style={styles.tab}>
+<<<<<<< HEAD
         <Feather name="code" color="#FFFFFF" size={24} />
+=======
+        <Ionicons name="code-slash" color="#FFFFFF" size={24} />
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -68,7 +84,11 @@ export default function NavigationBar() {
 
       <Link href="/events" asChild>
       <TouchableOpacity style={styles.tab}>
+<<<<<<< HEAD
         <Feather name="calendar" color="#FFFFFF" size={24} />
+=======
+        <Ionicons name="calendar" color="#FFFFFF" size={24} />
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -83,7 +103,11 @@ export default function NavigationBar() {
 
       <Link href="/hackatime" asChild>
       <TouchableOpacity style={styles.tab}>
+<<<<<<< HEAD
         <Feather name="clock" color="#FFFFFF" size={24} />
+=======
+        <Ionicons name="timer" color="#FFFFFF" size={24} />
+>>>>>>> 07ac53c (committing this now so it doesn't break later)
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -129,6 +153,10 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 12,
   },
+<<<<<<< HEAD
 });
 
 // aoskdpoaksdopaksdasdasdasd
+=======
+});
+>>>>>>> 07ac53c (committing this now so it doesn't break later)

@@ -60,8 +60,7 @@ const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, 
             <Stop offset="100%" stopColor={color} stopOpacity="0.4" />
           </LinearGradient>
         </Defs>
-        
-        {/* Grid lines */}
+
         {[0, 1, 2, 3, 4].map(i => (
           <Line
             key={i}
@@ -75,7 +74,6 @@ const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, 
           />
         ))}
         
-        {/* Chart line */}
         <Path
           d={pathData}
           stroke={color}
@@ -83,7 +81,6 @@ const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, 
           fill="none"
         />
         
-        {/* Data points */}
         {points.map((point, index) => (
           <Circle
             key={index}
@@ -96,7 +93,6 @@ const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, 
           />
         ))}
         
-        {/* Labels */}
         {data.map((item, index) => (
           <SvgText
             key={index}
@@ -110,7 +106,6 @@ const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, 
           </SvgText>
         ))}
         
-        {/* Y-axis labels */}
         {[0, 1, 2, 3, 4].map(i => {
           const value = minValue + (range * (4 - i) / 4);
           return (
@@ -749,6 +744,5 @@ const styles = StyleSheet.create({
     height: 90,
   },
 });
-/* 
-askpaksdpoaskdkpoopaskpod
-*/
+
+// aksdiopakdpasdpkoapsopadppasdaasdasasdasdaasdasdasd
