@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "hack-club-app",
+    "name": "Hack Club",
     "slug": "hack-club-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,15 +8,41 @@
     "scheme": "hackclubapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "appleTeamId": "FBHQAXZYLW",
+      "entitlements": {
+        "com.apple.developer.security.application-groups": [
+          "group.com.pizzalover125.mywidget",
+          "group.com.pizzalover125.mywidget"
+        ]
+      },
+      "bundleIdentifier": "com.pizzalover125.hackclubapp",
+      "infoPlist": {
+        "UIAppFonts": [
+          "AntDesign.ttf",
+          "Entypo.ttf",
+          "EvilIcons.ttf",
+          "Feather.ttf",
+          "FontAwesome.ttf",
+          "Foundation.ttf",
+          "Ionicons.ttf",
+          "MaterialIcons.ttf",
+          "MaterialCommunityIcons.ttf",
+          "SimpleLineIcons.ttf",
+          "Octicons.ttf",
+          "Zocial.ttf"
+        ]
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.pizzalover125.hackclubapp"
     },
     "web": {
       "bundler": "metro",
@@ -33,7 +59,8 @@
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
         }
-      ]
+      ],
+      "@bacons/apple-targets"
     ],
     "experiments": {
       "typedRoutes": true

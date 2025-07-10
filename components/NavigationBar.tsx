@@ -1,5 +1,5 @@
+import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
-import { BarChart, Calendar, Code, Hammer, Home, Timer } from 'lucide-react-native';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
@@ -8,7 +8,7 @@ export default function NavigationBar() {
     <View style={styles.container}>
       <Link href="/" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Home color="#FFFFFF" size={24} />
+        <Feather name="home" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -23,7 +23,7 @@ export default function NavigationBar() {
 
       <Link href="/ysws" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Hammer color="#FFFFFF" size={24} />
+        <MaterialIcons name="build" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -38,7 +38,7 @@ export default function NavigationBar() {
 
       <Link href="/stats" asChild>
       <TouchableOpacity style={styles.tab}>
-        <BarChart color="#FFFFFF" size={24} />
+        <Ionicons name="bar-chart" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -53,7 +53,7 @@ export default function NavigationBar() {
 
       <Link href="/hackathons" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Code color="#FFFFFF" size={24} />
+        <Feather name="code" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -68,7 +68,7 @@ export default function NavigationBar() {
 
       <Link href="/events" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Calendar color="#FFFFFF" size={24} />
+        <Feather name="calendar" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -83,7 +83,7 @@ export default function NavigationBar() {
 
       <Link href="/hackatime" asChild>
       <TouchableOpacity style={styles.tab}>
-        <Timer color="#FFFFFF" size={24} />
+        <Feather name="clock" color="#FFFFFF" size={24} />
         <Text
         style={styles.tabText}
         numberOfLines={1}
@@ -130,3 +130,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
 });
+
+// aoskdpoaksdopaksdasdasdasd

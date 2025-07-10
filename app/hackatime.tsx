@@ -2,9 +2,134 @@ import NavigationBar from "@/components/NavigationBar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import { ActivityIndicator, Alert, Button, Dimensions, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, View } from "react-native";
-import { LineChart } from "react-native-chart-kit";
+import Svg, { Circle, Defs, Line, LinearGradient, Path, Stop, Text as SvgText } from 'react-native-svg';
 
 const screenWidth = Dimensions.get("window").width;
+interface CustomLineChartData {
+  label: string;
+  value: number;
+}
+
+interface CustomLineChartProps {
+  data: CustomLineChartData[];
+  width: number;
+  height: number;
+  color?: string;
+}
+
+const CustomLineChart: React.FC<CustomLineChartProps> = ({ data, width, height, color = "#ec3750" }) => {
+  const padding = 40;
+  const chartWidth = width - (padding * 2);
+  const chartHeight = height - (padding * 2);
+  
+  if (!data || data.length === 0) {
+    return (
+      <View style={{ width, height, justifyContent: 'center', alignItems: 'center' }}>
+        <Text style={{ color: '#666' }}>No data available</Text>
+      </View>
+    );
+  }
+
+  const maxValue = Math.max(...data.map(d => d.value), 1);
+  const minValue = Math.min(...data.map(d => d.value), 0);
+  const range = maxValue - minValue || 1;
+
+  const points = data.map((item, index) => ({
+    x: padding + (index * (chartWidth / (data.length - 1))),
+    y: padding + chartHeight - ((item.value - minValue) / range) * chartHeight
+  }));
+
+  const pathData = points.reduce((path, point, index) => {
+    if (index === 0) {
+      return `M${point.x},${point.y}`;
+    }
+    const prevPoint = points[index - 1];
+    const cpx1 = prevPoint.x + (point.x - prevPoint.x) / 3;
+    const cpy1 = prevPoint.y;
+    const cpx2 = point.x - (point.x - prevPoint.x) / 3;
+    const cpy2 = point.y;
+    return `${path} C${cpx1},${cpy1} ${cpx2},${cpy2} ${point.x},${point.y}`;
+  }, '');
+
+  return (
+    <View style={{ backgroundColor: '#1E1E1E', borderRadius: 16, padding: 10 }}>
+      <Svg width={width} height={height}>
+        <Defs>
+          <LinearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <Stop offset="0%" stopColor={color} stopOpacity="0.8" />
+            <Stop offset="100%" stopColor={color} stopOpacity="0.4" />
+          </LinearGradient>
+        </Defs>
+        
+        {/* Grid lines */}
+        {[0, 1, 2, 3, 4].map(i => (
+          <Line
+            key={i}
+            x1={padding}
+            y1={padding + (i * chartHeight / 4)}
+            x2={width - padding}
+            y2={padding + (i * chartHeight / 4)}
+            stroke="#333333"
+            strokeWidth="1"
+            strokeDasharray="5,5"
+          />
+        ))}
+        
+        {/* Chart line */}
+        <Path
+          d={pathData}
+          stroke={color}
+          strokeWidth="3"
+          fill="none"
+        />
+        
+        {/* Data points */}
+        {points.map((point, index) => (
+          <Circle
+            key={index}
+            cx={point.x}
+            cy={point.y}
+            r="4"
+            fill={color}
+            stroke="#1E1E1E"
+            strokeWidth="2"
+          />
+        ))}
+        
+        {/* Labels */}
+        {data.map((item, index) => (
+          <SvgText
+            key={index}
+            x={points[index].x}
+            y={height - 10}
+            textAnchor="middle"
+            fontSize="10"
+            fill="#FFFFFF"
+          >
+            {item.label}
+          </SvgText>
+        ))}
+        
+        {/* Y-axis labels */}
+        {[0, 1, 2, 3, 4].map(i => {
+          const value = minValue + (range * (4 - i) / 4);
+          return (
+            <SvgText
+              key={i}
+              x={padding - 10}
+              y={padding + (i * chartHeight / 4) + 5}
+              textAnchor="end"
+              fontSize="10"
+              fill="#FFFFFF"
+            >
+              {value.toFixed(1)}h
+            </SvgText>
+          );
+        })}
+      </Svg>
+    </View>
+  );
+};
 
 interface Language {
   name: string;
@@ -130,11 +255,10 @@ export default function Index() {
     const monthlyData: MonthlyData[] = [];
     const today = new Date();
     
-    // Get the start of the current week (Monday)
     const getCurrentWeekStart = (date: Date) => {
       const d = new Date(date);
       const day = d.getDay();
-      const diff = d.getDate() - day + (day === 0 ? -6 : 1); // adjust when day is sunday
+      const diff = d.getDate() - day + (day === 0 ? -6 : 1); 
       return new Date(d.setDate(diff));
     };
     
@@ -159,7 +283,6 @@ export default function Index() {
           const data: ApiResponse = await response.json();
           const hours = data.data.total_seconds / 3600;
           
-          // Create week label (e.g., "Jan 15")
           const weekLabel = weekStart.toLocaleDateString('en-US', { 
             month: 'short', 
             day: 'numeric' 
@@ -207,17 +330,15 @@ export default function Index() {
     const threeMonthData: ThreeMonthData[] = [];
     const today = new Date();
     
-    // Get the start of the current week (Monday)
     const getCurrentWeekStart = (date: Date) => {
       const d = new Date(date);
       const day = d.getDay();
-      const diff = d.getDate() - day + (day === 0 ? -6 : 1); // adjust when day is sunday
+      const diff = d.getDate() - day + (day === 0 ? -6 : 1);
       return new Date(d.setDate(diff));
     };
     
     const currentWeekStart = getCurrentWeekStart(today);
     
-    // Fetch data for the past 12 weeks (3 months)
     for (let i = 11; i >= 0; i--) {
       const weekStart = new Date(currentWeekStart);
       weekStart.setDate(currentWeekStart.getDate() - (i * 7));
@@ -237,7 +358,6 @@ export default function Index() {
           const data: ApiResponse = await response.json();
           const hours = data.data.total_seconds / 3600;
           
-          // Create week label - show every 2nd week to avoid crowding
           const weekLabel = i % 2 === 0 ? weekStart.toLocaleDateString('en-US', { 
             month: 'short', 
             day: 'numeric' 
@@ -306,14 +426,16 @@ export default function Index() {
       }
       const todayData: ApiResponse = await todayResponse.json();
       setTodayStats(todayData.data);
-
+  
       await fetchWeeklyStats(id);
       await fetchMonthlyStats(id);
       await fetchThreeMonthStats(id);
+      
     } catch (err) {
       console.error("Error fetching stats:", err);
       setError(err instanceof Error ? err.message : "Failed to fetch stats");
       Alert.alert("Error", "Failed to fetch stats. Please check your Slack ID and try again.");
+    
     } finally {
       setLoading(false);
     }
@@ -356,92 +478,39 @@ export default function Index() {
 
   const getWeeklyChartData = () => {
     if (weeklyData.length === 0) {
-      return {
-        labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-        datasets: [{
-          data: [0, 0, 0, 0, 0, 0, 0],
-          strokeWidth: 3,
-        }]
-      };
+      return [];
     }
 
-    const labels = weeklyData.map(item => {
+    return weeklyData.map(item => {
       const date = new Date(item.date);
-      return date.toLocaleDateString('en-US', { weekday: 'short' });
+      const label = date.toLocaleDateString('en-US', { weekday: 'short' });
+      return {
+        label,
+        value: item.hours
+      };
     });
-
-    return {
-      labels,
-      datasets: [{
-        data: weeklyData.map(item => item.hours),
-        strokeWidth: 3,
-      }]
-    };
   };
 
   const getMonthlyChartData = () => {
     if (monthlyData.length === 0) {
-      return {
-        labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
-        datasets: [{
-          data: [0, 0, 0, 0],
-          strokeWidth: 3,
-        }]
-      };
+      return [];
     }
 
-    return {
-      labels: monthlyData.map(item => item.weekLabel),
-      datasets: [{
-        data: monthlyData.map(item => item.hours),
-        strokeWidth: 3,
-      }]
-    };
+    return monthlyData.map(item => ({
+      label: item.weekLabel,
+      value: item.hours
+    }));
   };
 
   const getThreeMonthChartData = () => {
     if (threeMonthData.length === 0) {
-      return {
-        labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8", "Week 9", "Week 10", "Week 11", "Week 12"],
-        datasets: [{
-          data: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-          strokeWidth: 3,
-        }]
-      };
+      return [];
     }
 
-    return {
-      labels: threeMonthData.map(item => item.weekLabel),
-      datasets: [{
-        data: threeMonthData.map(item => item.hours),
-        strokeWidth: 3,
-      }]
-    };
-  };
-
-  const chartConfig = {
-    backgroundColor: "#1E1E1E",
-    backgroundGradientFrom: "#1E1E1E",
-    backgroundGradientTo: "#1E1E1E",
-    decimalPlaces: 1,
-    color: (opacity = 1) => `rgba(236, 55, 80, ${opacity})`,
-    labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-    style: {
-      borderRadius: 16,
-    },
-    propsForDots: {
-      r: "4",
-      strokeWidth: "2",
-      stroke: "#ec3750"
-    },
-    propsForBackgroundLines: {
-      strokeDasharray: "",
-      stroke: "#333333",
-      strokeWidth: 1,
-    },
-    propsForLabels: {
-      fontSize: 12,
-    },
+    return threeMonthData.map(item => ({
+      label: item.weekLabel || '',
+      value: item.hours
+    }));
   };
 
   if (inputVisible) {
@@ -449,7 +518,7 @@ export default function Index() {
       <SafeAreaView style={styles.container}>
         <View style={styles.centerContainer}>
           <Text style={styles.title}>Hackatime</Text>
-          <View style={styles.inputContainer}>
+            <View style={[styles.inputContainer, { backgroundColor: "#23272f" }]}>
             <Text style={styles.inputLabel}>Enter your Slack ID</Text>
             <TextInput
               value={slackId}
@@ -466,7 +535,7 @@ export default function Index() {
               disabled={!slackId.trim()}
               color="#ec3750"
             />
-          </View>
+            </View>
         </View>
         <NavigationBar />
       </SafeAreaView>
@@ -508,92 +577,34 @@ export default function Index() {
 
         <View style={styles.card}>
           <Text style={styles.label}>Coding Time - Past 7 Days</Text>
-            <View style={styles.chartContainer}>
-            <LineChart
-              data={getWeeklyChartData()}
-              width={screenWidth - 72} 
-              height={220}
-              chartConfig={{
-              ...chartConfig,
-              propsForLabels: {
-                ...chartConfig.propsForLabels,
-                fontFamily: "System", 
-                fontWeight: "bold",
-              },
-              }}
-              style={styles.chart}
-              bezier
-              withVerticalLabels={true}
-              withHorizontalLabels={true}
-              withDots={true}
-              withShadow={false}
-              withVerticalLines={false}
-              withHorizontalLines={true}
-              yAxisSuffix="h"
-              segments={4}
-            />
-            </View>
+          <CustomLineChart
+            data={getWeeklyChartData()}
+            width={screenWidth - 72}
+            height={220}
+            color="#ec3750"
+          />
         </View>
 
         <View style={styles.card}>
           <Text style={styles.label}>Coding Time - Past 4 Weeks</Text>
-            <View style={styles.chartContainer}>
-            <LineChart
-              data={getMonthlyChartData()}
-              width={screenWidth - 72} 
-              height={220}
-              chartConfig={{
-              ...chartConfig,
-              propsForLabels: {
-                ...chartConfig.propsForLabels,
-                fontFamily: "System", 
-                fontWeight: "bold",
-              },
-              }}
-              style={styles.chart}
-              bezier
-              withVerticalLabels={true}
-              withHorizontalLabels={true}
-              withDots={true}
-              withShadow={false}
-              withVerticalLines={false}
-              withHorizontalLines={true}
-              yAxisSuffix="h"
-              segments={4}
-            />
-            </View>
+          <CustomLineChart
+            data={getMonthlyChartData()}
+            width={screenWidth - 72}
+            height={220}
+            color="#ec3750"
+          />
         </View>
 
         <View style={styles.card}>
           <Text style={styles.label}>Coding Time - Past 3 Months</Text>
-            <View style={styles.chartContainer}>
-            <LineChart
-              data={getThreeMonthChartData()}
-              width={screenWidth - 72} 
-              height={220}
-              chartConfig={{
-              ...chartConfig,
-              propsForLabels: {
-                ...chartConfig.propsForLabels,
-                fontFamily: "System", 
-                fontWeight: "bold",
-              },
-              }}
-              style={styles.chart}
-              bezier
-              withVerticalLabels={true}
-              withHorizontalLabels={true}
-              withDots={true}
-              withShadow={false}
-              withVerticalLines={false}
-              withHorizontalLines={true}
-              yAxisSuffix="h"
-              segments={4}
-            />
-            </View>
+          <CustomLineChart
+            data={getThreeMonthChartData()}
+            width={screenWidth - 72}
+            height={220}
+            color="#ec3750"
+          />
         </View>
 
-        
         {allTimeStats && allTimeStats.languages.length > 0 && (
           <View style={styles.card}>
             <Text style={styles.label}>Top Languages (All Time)</Text>
@@ -623,7 +634,6 @@ export default function Index() {
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
   container: {
@@ -711,13 +721,6 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "#FFFFFF",
   },
-  chartContainer: {
-    marginTop: 16,
-    alignItems: "center",
-  },
-  chart: {
-    borderRadius: 16,
-  },
   languageRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -746,3 +749,6 @@ const styles = StyleSheet.create({
     height: 90,
   },
 });
+/* 
+askpaksdpoaskdkpoopaskpod
+*/
