@@ -11,34 +11,7 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-<<<<<<< HEAD
-      "appleTeamId": "FBHQAXZYLW",
-      "entitlements": {
-        "com.apple.developer.security.application-groups": [
-          "group.com.pizzalover125.mywidget",
-          "group.com.pizzalover125.mywidget"
-        ]
-      },
-      "bundleIdentifier": "com.pizzalover125.hackclubapp",
-      "infoPlist": {
-        "UIAppFonts": [
-          "AntDesign.ttf",
-          "Entypo.ttf",
-          "EvilIcons.ttf",
-          "Feather.ttf",
-          "FontAwesome.ttf",
-          "Foundation.ttf",
-          "Ionicons.ttf",
-          "MaterialIcons.ttf",
-          "MaterialCommunityIcons.ttf",
-          "SimpleLineIcons.ttf",
-          "Octicons.ttf",
-          "Zocial.ttf"
-        ]
-      }
-=======
       "bundleIdentifier": "com.pizzalover125.hack-club-app"
->>>>>>> 07ac53c (committing this now so it doesn't break later)
     },
     "android": {
       "adaptiveIcon": {

@@ -7,54 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-		0664CD41B11E4C0D10B9240F /* libPods-HackClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40B8194B25EC5ED50DEC3385 /* libPods-HackClub.a */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		38032D077515BB82F71BE8ED /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B165B08C0CD214079F9168 /* ExpoModulesProvider.swift */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
+		A439953B3B23C101D853800A /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CADB45AA31AFEC7AE2C1EB6 /* ExpoModulesProvider.swift */; };
+		BA63F77E7BF965A315E76518 /* libPods-HackClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4EA18C0E91C1395C7BFC232 /* libPods-HackClub.a */; };
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
-		BBB649B72EF023DD6E708FBE /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 51205B23C0EF8053140301D4 /* PrivacyInfo.xcprivacy */; };
-=======
-		10A058826E1569C2C5045BE7 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 44C358FB661861AEDE81E3AD /* PrivacyInfo.xcprivacy */; };
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
-		14A103377AF1AFD5DD48BFCB /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6127AB6A893FD0C9BF22D2 /* ExpoModulesProvider.swift */; };
-		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
-		B7835390971806E741842757 /* libPods-HackClub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF0E54C29D190A082300D6AE /* libPods-HackClub.a */; };
-		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+		DC9734DE1B5CD28F001BD1A2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 676A824566FDA9E412B3475E /* PrivacyInfo.xcprivacy */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
 		13B07F961A680F5B00A75B9A /* HackClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; fileEncoding = 4; includeInIndex = 0; path = HackClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HackClub/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = Info.plist; path = HackClub/Info.plist; sourceTree = "<group>"; };
-		34B5664305F5AF54C629EB3E /* Pods-HackClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.debug.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.debug.xcconfig"; sourceTree = "<group>"; };
-		40B8194B25EC5ED50DEC3385 /* libPods-HackClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		51205B23C0EF8053140301D4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = HackClub/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		58B165B08C0CD214079F9168 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-HackClub/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		8EC0B86F3F205FB8B946E751 /* Pods-HackClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.release.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.release.xcconfig"; sourceTree = "<group>"; };
+		2CADB45AA31AFEC7AE2C1EB6 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-HackClub/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		676A824566FDA9E412B3475E /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = HackClub/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		89F598408F0E363EEDB07343 /* Pods-HackClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.debug.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.debug.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = HackClub/SplashScreen.storyboard; sourceTree = "<group>"; };
+		B90D2F354C6CB6F132507748 /* Pods-HackClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.release.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.release.xcconfig"; sourceTree = "<group>"; };
 		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = undefined; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HackClub/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* HackClub-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = "HackClub-Bridging-Header.h"; path = "HackClub/HackClub-Bridging-Header.h"; sourceTree = "<group>"; };
-=======
-		058E68B618646C4ADB96F556 /* Pods-HackClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.release.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.release.xcconfig"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* HackClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = HackClub/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = HackClub/Info.plist; sourceTree = "<group>"; };
-		44C358FB661861AEDE81E3AD /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = HackClub/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = HackClub/SplashScreen.storyboard; sourceTree = "<group>"; };
-		BB2F792C24A3F905000567C9 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Expo.plist; sourceTree = "<group>"; };
-		D53810098A236F418EEE715E /* Pods-HackClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HackClub.debug.xcconfig"; path = "Target Support Files/Pods-HackClub/Pods-HackClub.debug.xcconfig"; sourceTree = "<group>"; };
-		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EE6127AB6A893FD0C9BF22D2 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-HackClub/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
-		EF0E54C29D190A082300D6AE /* libPods-HackClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = HackClub/AppDelegate.swift; sourceTree = "<group>"; };
-		F11748442D0722820044C1D9 /* HackClub-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HackClub-Bridging-Header.h"; path = "HackClub/HackClub-Bridging-Header.h"; sourceTree = "<group>"; };
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+		F4EA18C0E91C1395C7BFC232 /* libPods-HackClub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HackClub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
-				0664CD41B11E4C0D10B9240F /* libPods-HackClub.a in Frameworks */,
-=======
-				B7835390971806E741842757 /* libPods-HackClub.a in Frameworks */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				BA63F77E7BF965A315E76518 /* libPods-HackClub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,60 +53,36 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */,
-<<<<<<< HEAD
-				51205B23C0EF8053140301D4 /* PrivacyInfo.xcprivacy */,
-=======
-				44C358FB661861AEDE81E3AD /* PrivacyInfo.xcprivacy */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				676A824566FDA9E412B3475E /* PrivacyInfo.xcprivacy */,
 			);
 			name = HackClub;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
-		1E38890C53E908BD55ACC91D /* Pods */ = {
+		15BA3BD25C5C3AD2D795DE14 /* HackClub */ = {
 			isa = PBXGroup;
 			children = (
-				D53810098A236F418EEE715E /* Pods-HackClub.debug.xcconfig */,
-				058E68B618646C4ADB96F556 /* Pods-HackClub.release.xcconfig */,
+				2CADB45AA31AFEC7AE2C1EB6 /* ExpoModulesProvider.swift */,
 			);
-			name = Pods;
-			path = Pods;
+			name = HackClub;
 			sourceTree = "<group>";
 		};
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-<<<<<<< HEAD
-				40B8194B25EC5ED50DEC3385 /* libPods-HackClub.a */,
-=======
-				EF0E54C29D190A082300D6AE /* libPods-HackClub.a */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				F4EA18C0E91C1395C7BFC232 /* libPods-HackClub.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-		4D54387023CB5B9DBA600F03 /* HackClub */ = {
+		4EAE00123CE3A4D12116DC66 /* ExpoModulesProviders */ = {
 			isa = PBXGroup;
 			children = (
-				58B165B08C0CD214079F9168 /* ExpoModulesProvider.swift */,
-			);
-			name = HackClub;
-			sourceTree = "<group>";
-		};
-		67CFF793F5381A260FF8F934 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				4D54387023CB5B9DBA600F03 /* HackClub */,
+				15BA3BD25C5C3AD2D795DE14 /* HackClub */,
 			);
 			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,13 +97,8 @@
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-<<<<<<< HEAD
-				E1DD642656E87ABC4A1C1A76 /* Pods */,
-				67CFF793F5381A260FF8F934 /* ExpoModulesProviders */,
-=======
-				1E38890C53E908BD55ACC91D /* Pods */,
-				BD88C99FEB5C131A951D0EB4 /* ExpoModulesProviders */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				B9B1C2DB2C2BD4386146890E /* Pods */,
+				4EAE00123CE3A4D12116DC66 /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -171,17 +113,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
-=======
-		8594F2E6A466D350F2CE52F5 /* HackClub */ = {
+		B9B1C2DB2C2BD4386146890E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE6127AB6A893FD0C9BF22D2 /* ExpoModulesProvider.swift */,
+				89F598408F0E363EEDB07343 /* Pods-HackClub.debug.xcconfig */,
+				B90D2F354C6CB6F132507748 /* Pods-HackClub.release.xcconfig */,
 			);
-			name = HackClub;
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,25 +130,6 @@
 			);
 			name = Supporting;
 			path = HackClub/Supporting;
-			sourceTree = "<group>";
-		};
-<<<<<<< HEAD
-		E1DD642656E87ABC4A1C1A76 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				34B5664305F5AF54C629EB3E /* Pods-HackClub.debug.xcconfig */,
-				8EC0B86F3F205FB8B946E751 /* Pods-HackClub.release.xcconfig */,
-			);
-			name = Pods;
-			path = Pods;
-=======
-		BD88C99FEB5C131A951D0EB4 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				8594F2E6A466D350F2CE52F5 /* HackClub */,
-			);
-			name = ExpoModulesProviders;
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,21 +140,13 @@
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "HackClub" */;
 			buildPhases = (
 				08A4A3CD28434E44B6B9DE2E /* [CP] Check Pods Manifest.lock */,
-<<<<<<< HEAD
-				23BF9CE536938151108D37F3 /* [Expo] Configure project */,
-=======
-				1652A5C763B231E63005630B /* [Expo] Configure project */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				61D1E9E5208D0BF573C6E451 /* [Expo] Configure project */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */,
-<<<<<<< HEAD
-				3DE19B40B61E7340A1758C0B /* [CP] Embed Pods Frameworks */,
-=======
-				91A1704DB990D108C22C269F /* [CP] Embed Pods Frameworks */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				CA671C2B8B312B01F3EAA392 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -282,11 +196,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-<<<<<<< HEAD
-				BBB649B72EF023DD6E708FBE /* PrivacyInfo.xcprivacy in Resources */,
-=======
-				10A058826E1569C2C5045BE7 /* PrivacyInfo.xcprivacy in Resources */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				DC9734DE1B5CD28F001BD1A2 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,7 +209,6 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-<<<<<<< HEAD
 			inputFileListPaths = (
 			);
 			inputPaths = (
@@ -307,11 +216,6 @@
 			name = "Bundle React Native code and images";
 			outputFileListPaths = (
 			);
-=======
-			inputPaths = (
-			);
-			name = "Bundle React Native code and images";
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,11 +244,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< HEAD
-		23BF9CE536938151108D37F3 /* [Expo] Configure project */ = {
-=======
-		1652A5C763B231E63005630B /* [Expo] Configure project */ = {
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+		61D1E9E5208D0BF573C6E451 /* [Expo] Configure project */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
@@ -363,27 +263,6 @@
 			shellPath = /bin/sh;
 			shellScript = "# This script configures Expo modules and generates the modules provider file.\nbash -l -c \"./Pods/Target\\ Support\\ Files/Pods-HackClub/expo-configure-project.sh\"\n";
 		};
-<<<<<<< HEAD
-		3DE19B40B61E7340A1758C0B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-HackClub/Pods-HackClub-frameworks.sh",
-				"${PODS_XCFRAMEWORKS_BUILD_DIR}/hermes-engine/Pre-built/hermes.framework/hermes",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/hermes.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackClub/Pods-HackClub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 		800E24972A6A228C8D4807E9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +274,7 @@
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/EXConstants.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXConstants/ExpoConstants_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/EXNotifications/ExpoNotifications_privacy.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoDevice/ExpoDevice_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoFileSystem/ExpoFileSystem_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/ExpoSystemUI/ExpoSystemUI_privacy.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RCT-Folly/RCT-Folly_privacy.bundle",
@@ -412,6 +292,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/EXConstants.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoConstants_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoNotifications_privacy.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoDevice_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoFileSystem_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ExpoSystemUI_privacy.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCT-Folly_privacy.bundle",
@@ -428,9 +309,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackClub/Pods-HackClub-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-<<<<<<< HEAD
-=======
-		91A1704DB990D108C22C269F /* [CP] Embed Pods Frameworks */ = {
+		CA671C2B8B312B01F3EAA392 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -448,7 +327,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HackClub/Pods-HackClub-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -457,11 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
-<<<<<<< HEAD
-				38032D077515BB82F71BE8ED /* ExpoModulesProvider.swift in Sources */,
-=======
-				14A103377AF1AFD5DD48BFCB /* ExpoModulesProvider.swift in Sources */,
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+				A439953B3B23C101D853800A /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,20 +344,12 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
-			baseConfigurationReference = 34B5664305F5AF54C629EB3E /* Pods-HackClub.debug.xcconfig */;
-=======
-			baseConfigurationReference = D53810098A236F418EEE715E /* Pods-HackClub.debug.xcconfig */;
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+			baseConfigurationReference = 89F598408F0E363EEDB07343 /* Pods-HackClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HackClub/HackClub.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = FBHQAXZYLW;
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -502,11 +368,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_DEBUG";
-<<<<<<< HEAD
-				PRODUCT_BUNDLE_IDENTIFIER = com.pizzalover125.hackclubapp;
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pizzalover125.hack-club-app";
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 				PRODUCT_NAME = HackClub;
 				SWIFT_OBJC_BRIDGING_HEADER = "HackClub/HackClub-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -518,20 +380,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-<<<<<<< HEAD
-			baseConfigurationReference = 8EC0B86F3F205FB8B946E751 /* Pods-HackClub.release.xcconfig */;
-=======
-			baseConfigurationReference = 058E68B618646C4ADB96F556 /* Pods-HackClub.release.xcconfig */;
->>>>>>> 07ac53c (committing this now so it doesn't break later)
+			baseConfigurationReference = B90D2F354C6CB6F132507748 /* Pods-HackClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HackClub/HackClub.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
-<<<<<<< HEAD
-				DEVELOPMENT_TEAM = FBHQAXZYLW;
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 				INFOPLIST_FILE = HackClub/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -545,11 +399,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D EXPO_CONFIGURATION_RELEASE";
-<<<<<<< HEAD
-				PRODUCT_BUNDLE_IDENTIFIER = com.pizzalover125.hackclubapp;
-=======
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pizzalover125.hack-club-app";
->>>>>>> 07ac53c (committing this now so it doesn't break later)
 				PRODUCT_NAME = HackClub;
 				SWIFT_OBJC_BRIDGING_HEADER = "HackClub/HackClub-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;

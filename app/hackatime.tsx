@@ -562,7 +562,7 @@ export default function Index() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
-
+        <Text style={styles.title}>Hackatime Stats</Text>
         {hackatimeStats.map((stat, index) => (
           <View key={index} style={styles.card}>
             <Text style={styles.label}>{stat.label}</Text>
@@ -744,5 +744,3 @@ const styles = StyleSheet.create({
     height: 90,
   },
 });
-
-// aksdiopakdpasdpkoapsopadppasdaasdasasdasdaasdasdasd

@@ -62,7 +62,6 @@ target 'HackClub' do
     end
   end
 end
-<<<<<<< HEAD
 
 
 # apple-targets-extension-loader -- Dynamic loading of target configurations
@@ -77,5 +76,3 @@ Dir.glob(File.join(__dir__, '..', 'targets', '**', 'pods.rb')).each do |target_f
     eval(File.read(target_file), target_binding, target_file)
   end
 end
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)

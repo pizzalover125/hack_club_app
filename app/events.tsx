@@ -544,4 +544,5 @@ const styles = StyleSheet.create({
         fontWeight: "600",
         marginLeft: 6,
     },
+    topTitle: { fontSize: 24, fontWeight: "bold", color: "#FFFFFF", marginBottom: 20 },
 });

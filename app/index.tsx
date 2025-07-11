@@ -137,7 +137,7 @@ export default function Index() {
             marginBottom: 12,
           }}
         >
-          Welcome to the Hack Club app!
+          Welcome!
         </Text>
         <Text
           style={{
@@ -148,7 +148,7 @@ export default function Index() {
             opacity: 0.85,
           }}
         >
-          Build epic projects. Have fun
+          Build epic projects. Have fun.
         </Text>
       </View>
       <NavigationBar />

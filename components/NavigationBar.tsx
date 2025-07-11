@@ -1,124 +1,49 @@
-<<<<<<< HEAD
-import { Feather, Ionicons, MaterialIcons } from '@expo/vector-icons';
-=======
 import { Ionicons } from '@expo/vector-icons';
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-import { Link } from 'expo-router';
+import { Link, usePathname } from 'expo-router';
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
+const tabs = [
+  { href: '/', icon: 'home' },
+  { href: '/ysws', icon: 'hammer' },
+  { href: '/stats', icon: 'bar-chart' },
+  { href: '/hackathons', icon: 'code-slash' },
+  { href: '/events', icon: 'calendar' },
+  { href: '/hackatime', icon: 'timer' },
+  // { href: '/scrapbook', icon: 'book-outline' }, 
+  { href: '/scraps', icon: 'book' }
+];
+
 export default function NavigationBar() {
+  const pathname = usePathname();
+
   return (
     <View style={styles.container}>
-      <Link href="/" asChild>
-      <TouchableOpacity style={styles.tab}>
-<<<<<<< HEAD
-        <Feather name="home" color="#FFFFFF" size={24} />
-=======
-        <Ionicons name="home" color="#FFFFFF" size={24} />
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        Home
-        </Text>
-      </TouchableOpacity>
-      </Link>
-
-      <Link href="/ysws" asChild>
-      <TouchableOpacity style={styles.tab}>
-<<<<<<< HEAD
-        <MaterialIcons name="build" color="#FFFFFF" size={24} />
-=======
-        <Ionicons name="hammer" color="#FFFFFF" size={24} />
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        YSWS
-        </Text>
-      </TouchableOpacity>
-      </Link>
-
-      <Link href="/stats" asChild>
-      <TouchableOpacity style={styles.tab}>
-        <Ionicons name="bar-chart" color="#FFFFFF" size={24} />
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        Stats
-        </Text>
-      </TouchableOpacity>
-      </Link>
-
-      <Link href="/hackathons" asChild>
-      <TouchableOpacity style={styles.tab}>
-<<<<<<< HEAD
-        <Feather name="code" color="#FFFFFF" size={24} />
-=======
-        <Ionicons name="code-slash" color="#FFFFFF" size={24} />
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        Hackathons
-        </Text>
-      </TouchableOpacity>
-      </Link>
-
-      <Link href="/events" asChild>
-      <TouchableOpacity style={styles.tab}>
-<<<<<<< HEAD
-        <Feather name="calendar" color="#FFFFFF" size={24} />
-=======
-        <Ionicons name="calendar" color="#FFFFFF" size={24} />
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        Events
-        </Text>
-      </TouchableOpacity>
-      </Link>
-
-      <Link href="/hackatime" asChild>
-      <TouchableOpacity style={styles.tab}>
-<<<<<<< HEAD
-        <Feather name="clock" color="#FFFFFF" size={24} />
-=======
-        <Ionicons name="timer" color="#FFFFFF" size={24} />
->>>>>>> 07ac53c (committing this now so it doesn't break later)
-        <Text
-        style={styles.tabText}
-        numberOfLines={1}
-        ellipsizeMode="tail"
-        adjustsFontSizeToFit
-        minimumFontScale={0.7}
-        >
-        Hackatime
-        </Text>
-      </TouchableOpacity>
-      </Link>
+      {tabs.map(tab => {
+        const selected = pathname === tab.href;
+        return (
+          <Link href={tab.href as any} asChild key={tab.href}>
+            <TouchableOpacity style={styles.tab}>
+              <Ionicons
+                name={tab.icon as any}
+                color={selected ? '#ec3750' : '#FFFFFF'}
+                size={24}
+              />
+              <Text
+                style={[
+                  styles.tabText,
+                  selected && { color: '#ec3750' },
+                ]}
+                numberOfLines={1}
+                ellipsizeMode="tail"
+                adjustsFontSizeToFit
+                minimumFontScale={0.7}
+              >
+              </Text>
+            </TouchableOpacity>
+          </Link>
+        );
+      })}
     </View>
   );
 }
@@ -153,10 +78,4 @@ const styles = StyleSheet.create({
     marginTop: 5,
     fontSize: 12,
   },
-<<<<<<< HEAD
 });
-
-// aoskdpoaksdopaksdasdasdasd
-=======
-});
->>>>>>> 07ac53c (committing this now so it doesn't break later)

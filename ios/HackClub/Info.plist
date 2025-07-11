@@ -28,11 +28,7 @@
         <key>CFBundleURLSchemes</key>
         <array>
           <string>hackclubapp</string>
-<<<<<<< HEAD
-          <string>com.pizzalover125.hackclubapp</string>
-=======
           <string>com.pizzalover125.hack-club-app</string>
->>>>>>> 07ac53c (committing this now so it doesn't break later)
         </array>
       </dict>
     </array>
@@ -53,24 +49,6 @@
     <array>
       <string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>
     </array>
-<<<<<<< HEAD
-    <key>UIAppFonts</key>
-    <array>
-      <string>AntDesign.ttf</string>
-      <string>Entypo.ttf</string>
-      <string>EvilIcons.ttf</string>
-      <string>Feather.ttf</string>
-      <string>FontAwesome.ttf</string>
-      <string>Foundation.ttf</string>
-      <string>Ionicons.ttf</string>
-      <string>MaterialIcons.ttf</string>
-      <string>MaterialCommunityIcons.ttf</string>
-      <string>SimpleLineIcons.ttf</string>
-      <string>Octicons.ttf</string>
-      <string>Zocial.ttf</string>
-    </array>
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
     <key>UILaunchStoryboardName</key>
     <string>SplashScreen</string>
     <key>UIRequiredDeviceCapabilities</key>

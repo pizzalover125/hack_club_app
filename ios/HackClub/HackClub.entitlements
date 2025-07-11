@@ -4,13 +4,5 @@
   <dict>
     <key>aps-environment</key>
     <string>development</string>
-<<<<<<< HEAD
-    <key>com.apple.developer.security.application-groups</key>
-    <array>
-      <string>group.com.pizzalover125.mywidget</string>
-      <string>group.com.pizzalover125.mywidget</string>
-    </array>
-=======
->>>>>>> 07ac53c (committing this now so it doesn't break later)
   </dict>
 </plist>
