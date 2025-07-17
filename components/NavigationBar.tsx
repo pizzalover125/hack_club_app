@@ -1,81 +1,140 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link, usePathname } from 'expo-router';
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import React, { useState } from 'react';
+import { Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 const tabs = [
-  { href: '/', icon: 'home' },
-  { href: '/ysws', icon: 'hammer' },
-  { href: '/stats', icon: 'bar-chart' },
-  { href: '/hackathons', icon: 'code-slash' },
-  { href: '/events', icon: 'calendar' },
-  { href: '/hackatime', icon: 'timer' },
-  // { href: '/scrapbook', icon: 'book-outline' }, 
-  { href: '/scraps', icon: 'book' }
+  { href: '/', icon: 'home', label: 'Home' },
+  { href: '/ysws', icon: 'hammer', label: 'YSWS' },
+  { href: '/stats', icon: 'bar-chart', label: 'Stats' },
+  { href: '/hackathons', icon: 'code-slash', label: 'Hackathons' },
+  { href: '/events', icon: 'calendar', label: 'Events' },
+  { href: '/hackatime', icon: 'timer', label: 'Hackatime' },
+  { href: '/scrapbook', icon: 'book-outline', label: 'Scrapbook' }, 
+  { href: '/scraps', icon: 'book', label: 'Scraps' },
+  { href: '/mail', icon: 'mail', label: 'Mail' },
 ];
 
-export default function NavigationBar() {
+export default function HamburgerMenu() {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <View style={styles.container}>
-      {tabs.map(tab => {
-        const selected = pathname === tab.href;
-        return (
-          <Link href={tab.href as any} asChild key={tab.href}>
-            <TouchableOpacity style={styles.tab}>
-              <Ionicons
-                name={tab.icon as any}
-                color={selected ? '#ec3750' : '#FFFFFF'}
-                size={24}
-              />
-              <Text
-                style={[
-                  styles.tabText,
-                  selected && { color: '#ec3750' },
-                ]}
-                numberOfLines={1}
-                ellipsizeMode="tail"
-                adjustsFontSizeToFit
-                minimumFontScale={0.7}
-              >
-              </Text>
-            </TouchableOpacity>
-          </Link>
-        );
-      })}
-    </View>
+    <>
+      {/* Hamburger Button */}
+      <TouchableOpacity style={styles.hamburgerButton} onPress={toggleMenu}>
+        <Ionicons 
+          name={isMenuOpen ? 'close' : 'menu'} 
+          size={24} 
+          color="#FFFFFF" 
+        />
+      </TouchableOpacity>
+
+      {/* Menu Modal */}
+      <Modal
+        visible={isMenuOpen}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={closeMenu}
+      >
+        <TouchableOpacity 
+          style={styles.overlay} 
+          activeOpacity={1} 
+          onPress={closeMenu}
+        >
+          <View style={styles.menuContainer}>
+            {tabs.map(tab => {
+              const selected = pathname === tab.href;
+              return (
+                <Link href={tab.href as any} asChild key={tab.href}>
+                  <TouchableOpacity 
+                    style={[
+                      styles.menuItem,
+                      selected && styles.menuItemSelected
+                    ]}
+                    onPress={closeMenu}
+                  >
+                    <Ionicons
+                      name={tab.icon as any}
+                      color={selected ? '#ec3750' : '#FFFFFF'}
+                      size={20}
+                      style={styles.menuIcon}
+                    />
+                    <Text
+                      style={[
+                        styles.menuText,
+                        selected && { color: '#ec3750' },
+                      ]}
+                    >
+                      {tab.label}
+                    </Text>
+                  </TouchableOpacity>
+                </Link>
+              );
+            })}
+          </View>
+        </TouchableOpacity>
+      </Modal>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',                  
-    alignItems: 'center',
-    backgroundColor: '#1A1A1A',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+  hamburgerButton: {
     position: 'absolute',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    elevation: 8,
-    borderTopWidth: 1,
-    borderTopColor: '#333333',
-    height: 70,
-    zIndex: 100,
-  },
-  tab: {
-    flex: 1,
-    alignItems: 'center',
+    top: 50,
+    right: 20,
+    width: 44,
+    height: 44,
+    backgroundColor: '#1A1A1A',
+    borderRadius: 8,
     justifyContent: 'center',
-    paddingVertical: 10,
+    alignItems: 'center',
+    zIndex: 1000,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: '#333333',
   },
-  tabText: {
+  overlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
+    paddingTop: 100,
+    paddingRight: 20,
+  },
+  menuContainer: {
+    backgroundColor: '#1A1A1A',
+    borderRadius: 8,
+    paddingVertical: 10,
+    minWidth: 200,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: '#333333',
+  },
+  menuItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
+    paddingVertical: 15,
+  },
+  menuItemSelected: {
+    backgroundColor: '#333333',
+  },
+  menuIcon: {
+    marginRight: 15,
+  },
+  menuText: {
     color: '#FFFFFF',
+    fontSize: 16,
     fontWeight: '600',
-    marginTop: 5,
-    fontSize: 12,
   },
 });
