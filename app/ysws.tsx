@@ -1,5 +1,6 @@
 import NavigationBar from "@/components/NavigationBar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Haptics from 'expo-haptics';
 import { XMLParser } from "fast-xml-parser";
 import { Check, ChevronDown, Clock, Pin, PinOff, Share2 } from "lucide-react-native";
 import React, { useEffect, useState } from "react";
@@ -238,7 +239,10 @@ export default function Index() {
       <View style={styles.statusContainer}>
         <TouchableOpacity
           style={[styles.statusButton, { borderColor: getStatusColor(currentStatus) }]}
-          onPress={() => setDropdownVisible(programKey)}
+          onPress={async () => {
+            await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+            setDropdownVisible(programKey);
+          }}
         >
           <Text style={[styles.statusButtonText, { color: getStatusColor(currentStatus) }]}>
             {getStatusLabel(currentStatus)}
@@ -496,17 +500,23 @@ export default function Index() {
               <View style={styles.linkContainer}>
                 <TouchableOpacity
                   style={styles.button}
-                  onPress={() => Linking.openURL(program.link)}
+                  onPress={async () => {
+                  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                  Linking.openURL(program.link);
+                  }}
                 >
                   <Text style={styles.buttonText}>Learn More</Text>
                 </TouchableOpacity>
                 
                 {program.discussionLink && (
                   <TouchableOpacity
-                    style={[styles.button, styles.secondaryButton]}
-                    onPress={() => Linking.openURL(program.discussionLink)}
+                  style={[styles.button, styles.secondaryButton]}
+                  onPress={async () => {
+                    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                    Linking.openURL(program.discussionLink);
+                  }}
                   >
-                    <Text style={styles.secondaryButtonText}>Join Discussion</Text>
+                  <Text style={styles.secondaryButtonText}>Join Discussion</Text>
                   </TouchableOpacity>
                 )}
               </View>
@@ -544,14 +554,18 @@ export default function Index() {
                     </View>
                     <View style={styles.headerActions}>
                       <TouchableOpacity
-                        style={styles.shareButton}
-                        onPress={() => handleLongPress(program)}
-                      >
-                        <Share2 color="#666666" size={18} />
-                      </TouchableOpacity>
+                      style={styles.shareButton}
+                      onPress={async () => {
+                        await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                        handleLongPress(program);
+                      }}
+                      ></TouchableOpacity>
                       <TouchableOpacity
                         style={styles.pinButton}
-                        onPress={() => togglePin(programKey)}
+                        onPress={async () => {
+                          await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+                          togglePin(programKey);
+                        }}
                       >
                         {isPinned ? (
                           <Pin color="#777777" size={20} fill="#777777" />
@@ -615,25 +629,26 @@ export default function Index() {
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>Select Status</Text>
             {STATUS_OPTIONS.map((option) => (
-              <TouchableOpacity
+                <TouchableOpacity
                 key={option.value}
                 style={[
                   styles.modalOption,
                   dropdownVisible && programStatuses[dropdownVisible] === option.value && styles.selectedModalOption
                 ]}
-                onPress={() => {
+                onPress={async () => {
                   if (dropdownVisible) {
-                    updateProgramStatus(dropdownVisible, option.value);
+                  await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Soft);
+                  updateProgramStatus(dropdownVisible, option.value);
                   }
                 }}
-              >
+                >
                 <Text style={[styles.modalOptionText, { color: option.color }]}>
                   {option.label}
                 </Text>
                 {dropdownVisible && programStatuses[dropdownVisible] === option.value && (
                   <Check color={option.color} size={18} />
                 )}
-              </TouchableOpacity>
+                </TouchableOpacity>
             ))}
           </View>
         </TouchableOpacity>

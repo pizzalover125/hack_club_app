@@ -2,17 +2,17 @@ import NavigationBar from "@/components/NavigationBar";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useEffect, useState } from "react";
 import {
-    ActivityIndicator,
-    Button,
-    Dimensions,
-    Linking,
-    SafeAreaView,
-    ScrollView,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  ActivityIndicator,
+  Button,
+  Dimensions,
+  Linking,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from "react-native";
 
 interface MailItem {
@@ -190,12 +190,19 @@ export default function MailViewer() {
   if (inputVisible) {
     return (
       <SafeAreaView style={styles.centerContainer}>
-        <Text style={styles.title}>Hack Club Mail</Text>
+        <Text style={styles.title}>Mail Viewer</Text>
         <View style={styles.inputContainer}>
           <Text style={styles.inputLabel}>Enter your API Key</Text>
-          <Text style={styles.inputHint}>
-            Get your API key from the Hack Club mail system
-          </Text>
+            <Text
+            style={styles.inputHint}
+            onPress={() => Linking.openURL("https://mail.hackclub.com/my/api_keys")}
+            >
+            Get your API key from{" "}
+            <Text style={{ color: "#4FC3F7", textDecorationLine: "underline" }}>
+              https://mail.hackclub.com/my/api_keys
+            </Text>
+            .
+            </Text>
           <TextInput
             value={apiKey}
             onChangeText={setApiKey}
@@ -253,7 +260,7 @@ export default function MailViewer() {
         contentContainerStyle={styles.contentContainer}
         showsVerticalScrollIndicator={false}
       >
-        <Text style={styles.title}>Hack Club Mail</Text>
+        <Text style={styles.title}>Mail Viewer</Text>
         
         <View style={styles.summaryCard}>
           <Text style={styles.summaryTitle}>Mail Summary</Text>

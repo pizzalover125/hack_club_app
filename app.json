@@ -11,7 +11,10 @@
     "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.pizzalover125.hack-club-app"
+      "bundleIdentifier": "com.pizzalover125.hackclubapp",
+      "infoPlist": {
+        "NSPhotoLibraryUsageDescription": "We need access to your photo library to upload media files."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -19,7 +22,8 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.pizzalover125.hackclubapp"
+      "package": "com.pizzalover125.hackclubapp",
+      "permissions": ["READ_MEDIA_IMAGES", "READ_MEDIA_VIDEO"]
     },
     "web": {
       "bundler": "metro",
@@ -37,10 +41,21 @@
           "backgroundColor": "#ec3750"
         }
       ],
-      "@bacons/apple-targets"
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "We need access to your photos to upload them to Hack Club's CDN."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "00a7702a-3a5e-4b00-bb94-7dbf117e1767"
+      }
     }
   }
 }
